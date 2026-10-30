@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FeedbackHub" },
+      { title: "FeedbackHub Lovable" },
       { name: "description", content: "Deja tu feedback en FeedbackHub." },
-      { name: "author", content: "FeedbackHub" },
-      { property: "og:title", content: "FeedbackHub" },
+      { name: "author", content: "FeedbackHub Lovable" },
+      { property: "og:title", content: "FeedbackHub Lovable" },
       { property: "og:description", content: "Deja tu feedback en FeedbackHub." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
