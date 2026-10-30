@@ -104,7 +104,7 @@ function Index() {
                 type="submit"
                 className="w-full rounded-full bg-primary py-3.5 font-medium text-primary-foreground transition hover:opacity-90"
               >
-                Enviar feedback
+                Enviar opinión
               </button>
             </form>
           )}
