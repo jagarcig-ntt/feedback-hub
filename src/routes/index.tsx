@@ -51,7 +51,7 @@ function Index() {
             Tu opinión nos <span className="italic text-primary">hace mejores.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            Ideas, críticas o un simple saludo. Lo leemos todo.
+            Lo leemos todo, de verdad.
           </p>
         </section>
 
