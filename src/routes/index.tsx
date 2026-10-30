@@ -4,9 +4,9 @@ import { useState, type FormEvent } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FeedbackHub — Déjanos tu opinión" },
+      { title: "FeedbackHub Lovable — Déjanos tu opinión" },
       { name: "description", content: "Comparte tu feedback con nosotros: nombre, email y mensaje en un minuto." },
-      { property: "og:title", content: "FeedbackHub — Déjanos tu opinión" },
+      { property: "og:title", content: "FeedbackHub Lovable — Déjanos tu opinión" },
       { property: "og:description", content: "Comparte tu feedback con nosotros en un minuto." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -46,7 +46,7 @@ function Index() {
     <main className="min-h-screen bg-background px-6 py-16">
       <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1fr_1.2fr] md:items-center">
         <section>
-          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">FeedbackHub</p>
+          <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">FeedbackHub Lovable</p>
           <h1 className="mt-4 font-display text-5xl leading-[1.05] text-foreground md:text-6xl">
             Tu opinión nos <span className="italic text-primary">hace mejores.</span>
           </h1>
