@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,12 +33,25 @@ function Index() {
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const onSubmit = (ev: FormEvent) => {
+  const onSubmit = async (ev: FormEvent) => {
     ev.preventDefault();
     const e = validate(data);
     setErrors(e);
-    if (Object.keys(e).length === 0) setSent(true);
+    if (Object.keys(e).length > 0) return;
+    setSending(true);
+    setSubmitError("");
+    // No .select(): visitors may insert but cannot read feedback rows.
+    const { error } = await supabase.from("feedback").insert({
+      name: data.name.trim(),
+      email: data.email.trim(),
+      message: data.message.trim(),
+    });
+    setSending(false);
+    if (error) setSubmitError("No hemos podido enviar tu opinión. Inténtalo de nuevo.");
+    else setSent(true);
   };
 
   const field = "w-full rounded-xl border-2 border-border bg-card px-4 py-3 text-foreground outline-none transition focus:border-primary";
@@ -100,11 +114,13 @@ function Index() {
                   <span className="text-muted-foreground">{data.message.length}/1000</span>
                 </div>
               </div>
+              {submitError && <p className="text-sm text-destructive">{submitError}</p>}
               <button
                 type="submit"
-                className="w-full rounded-full bg-primary py-3.5 font-medium text-primary-foreground transition hover:opacity-90"
+                disabled={sending}
+                className="w-full disabled:opacity-60 rounded-full bg-primary py-3.5 font-medium text-primary-foreground transition hover:opacity-90"
               >
-                Enviar opinión
+                {sending ? "Enviando…" : "Enviar opinión"}
               </button>
             </form>
           )}
