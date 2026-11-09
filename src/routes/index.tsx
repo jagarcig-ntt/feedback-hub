@@ -44,7 +44,7 @@ function Index() {
     setSending(true);
     setSubmitError("");
     // No .select(): visitors may insert but cannot read feedback rows.
-    const { error } = await supabase.from("feedback").insert({
+    const { error } = await supabase.from("feedbacks").insert({
       name: data.name.trim(),
       email: data.email.trim(),
       message: data.message.trim(),
