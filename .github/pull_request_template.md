@@ -4,9 +4,11 @@
 
 
 
+
 ## Por qué
 
 <!-- Qué problema resuelve o qué necesidad cubre. -->
+
 
 
 
@@ -18,9 +20,11 @@
 
 
 
+
 ## ¿Qué pasa si falla?
 
 <!-- Qué vería un usuario y a qué afectaría si este cambio fallara en producción. -->
+
 
 
 
