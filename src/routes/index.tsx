@@ -41,6 +41,7 @@ function Index() {
     const e = validate(data);
     setErrors(e);
     if (Object.keys(e).length > 0) return;
+    console.log("Opinión enviada", data.name, data.email, data.message);
     setSending(true);
     setSubmitError("");
     // No .select(): visitors may insert but cannot read feedback rows.
